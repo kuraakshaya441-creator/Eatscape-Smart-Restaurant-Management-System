@@ -1,7 +1,7 @@
 const API_URL = "https://eatscape-backend.onrender.com/api/foods";
-const ORDERS_URL = "http://localhost:8080/api/orders";
+const ORDERS_URL = "https://eatscape-backend.onrender.com/api/orders";
 const USERS_URL = "https://eatscape-backend.onrender.com/api/users";
-const RECOMMENDATIONS_URL = "http://localhost:8080/api/recommendations";
+const RECOMMENDATIONS_URL = "https://eatscape-backend.onrender.com/api/recommendations";
 
 let foodItems = [];
 let recommendedFoods = [];
