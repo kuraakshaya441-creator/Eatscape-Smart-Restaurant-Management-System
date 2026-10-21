@@ -1,0 +1,553 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eatscape | Smart Restaurant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+
+        <a href="#" class="logo">Eatscape<span>.</span></a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#menu">Our Menu</a>
+            <a href="#my-orders-section">My Orders</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+
+            <a href="#login-section" id="login-nav-link">
+                Login / Register
+            </a>
+
+            <div class="nav-account">
+                <span
+                    id="current-user-label"
+                    class="current-user-label"
+                    hidden>
+                </span>
+
+                <button
+                    type="button"
+                    id="logout-button"
+                    class="logout-button"
+                    hidden>
+                    Logout
+                </button>
+            </div>
+
+            <a href="#menu" class="nav-button">Order Now</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    FRESH INGREDIENTS · GREAT TASTE
+                </p>
+
+                <h1>Good food.<br>Good mood.</h1>
+
+                <p class="hero-description">
+                    Discover delicious meals made with fresh ingredients.
+                    Your next favourite dish is just a click away.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#menu" class="primary-button">
+                        Explore Menu ↗
+                    </a>
+
+                    <a href="#about" class="text-button">
+                        Our Story
+                    </a>
+                </div>
+
+                <div class="hero-note">
+                    <span>✦</span> Made fresh, served with love.
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85"
+                    alt="Fresh and colourful restaurant food">
+
+                <div class="image-label">
+                    <span>✦</span>
+
+                    <div>
+                        <strong>Freshly prepared</strong>
+                        <small>Every single day</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+
+            <div>
+                <span class="feature-icon">✳</span>
+
+                <div>
+                    <h3>Fresh Ingredients</h3>
+                    <p>Quality in every bite</p>
+                </div>
+            </div>
+
+            <div>
+                <span class="feature-icon">♡</span>
+
+                <div>
+                    <h3>Made with Love</h3>
+                    <p>Food that feels like home</p>
+                </div>
+            </div>
+
+            <div>
+                <span class="feature-icon">⌁</span>
+
+                <div>
+                    <h3>Easy Ordering</h3>
+                    <p>Your favourites, simplified</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- NEW: Smart Recommendations Section -->
+        <section
+            class="menu-section recommendations-section"
+            id="recommendations">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">
+                        SMART SUGGESTIONS JUST FOR YOU
+                    </p>
+
+                    <h2>
+                        Smart Picks for You<span>.</span>
+                    </h2>
+                </div>
+
+                <p class="section-description">
+                    Explore dishes recommended from our available menu
+                    and popular orders.
+                </p>
+
+            </div>
+
+            <div
+                id="recommendation-list"
+                class="food-grid">
+
+                <p class="loading-message">
+                    Finding delicious picks for you...
+                </p>
+
+            </div>
+
+            <p
+                id="recommendation-message"
+                class="loading-message"
+                role="status">
+            </p>
+
+        </section>
+
+        <!-- Main Menu Section -->
+        <section class="menu-section" id="menu">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">
+                        A LITTLE SOMETHING FOR EVERYONE
+                    </p>
+
+                    <h2>Explore our menu<span>.</span></h2>
+                </div>
+
+                <p class="section-description">
+                    From comforting classics to exciting new flavours,
+                    find something you'll love.
+                </p>
+
+            </div>
+
+            <div class="menu-filters">
+
+                <button
+                    class="filter-button active"
+                    data-category="All">
+                    All Items
+                </button>
+
+                <button
+                    class="filter-button"
+                    data-category="Biryani">
+                    Biryani
+                </button>
+
+                <button
+                    class="filter-button"
+                    data-category="Starters">
+                    Starters
+                </button>
+
+                <button
+                    class="filter-button"
+                    data-category="Main Course">
+                    Main Course
+                </button>
+
+                <button
+                    class="filter-button"
+                    data-category="Desserts">
+                    Desserts
+                </button>
+
+            </div>
+
+            <div id="food-list" class="food-grid">
+                <p class="loading-message">
+                    Loading our delicious menu...
+                </p>
+            </div>
+
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+
+            <div class="about-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=85"
+                    alt="A welcoming restaurant dining space">
+
+            </div>
+
+            <div class="about-content">
+
+                <p class="eyebrow">MORE THAN JUST A MEAL</p>
+
+                <h2>
+                    Food brings<br>us together<span>.</span>
+                </h2>
+
+                <p>
+                    At Eatscape, we believe every meal should be an experience.
+                    We bring great flavours, welcoming hospitality, and a love
+                    for good food together at one table.
+                </p>
+
+                <a href="#menu" class="primary-button">
+                    Discover Our Menu ↗
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+
+            <p class="eyebrow">WE'D LOVE TO HEAR FROM YOU</p>
+
+            <h2>
+                Let's make it a<br>delicious day<span>.</span>
+            </h2>
+
+            <p>
+                Have a question about our menu? Get in touch with us.
+            </p>
+
+            <a
+                href="mailto:hello@eatscape.example"
+                class="primary-button">
+                Contact Us ↗
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+
+        <a href="#home" class="logo">Eatscape<span>.</span></a>
+
+        <p>Good food. Good mood. Made with love.</p>
+
+        <p>© 2026 Eatscape. Student project.</p>
+
+    </footer>
+
+    <!-- Login and Registration Section -->
+    <section id="login-section">
+
+        <h2>Welcome to Eatscape!</h2>
+
+        <p>Login or create an account to continue.</p>
+
+        <!-- Login Form -->
+        <div class="auth-form">
+
+            <h3>Login</h3>
+
+            <form id="login-form">
+
+                <div class="form-group">
+
+                    <label for="login-email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="login-email"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="login-password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="login-password"
+                        placeholder="Enter your password"
+                        required>
+
+                </div>
+
+                <button type="submit" id="login-button">
+                    Login
+                </button>
+
+                <p id="login-message" role="status"></p>
+
+            </form>
+
+        </div>
+
+        <!-- Registration Form -->
+        <div class="auth-form">
+
+            <h3>Create an Account</h3>
+
+            <form id="register-form">
+
+                <div class="form-group">
+
+                    <label for="register-name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="register-name"
+                        placeholder="Enter your full name"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="register-email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="register-email"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="register-password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="register-password"
+                        placeholder="Create a password"
+                        minlength="8"
+                        required>
+
+                </div>
+
+                <button type="submit" id="register-button">
+                    Register
+                </button>
+
+                <p id="register-message" role="status"></p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- My Orders Section -->
+    <section
+        id="my-orders-section"
+        class="my-orders-section">
+
+        <div class="section-heading">
+
+            <div>
+                <p class="eyebrow">
+                    YOUR EATSCAPE EXPERIENCE
+                </p>
+
+                <h2>My Orders<span>.</span></h2>
+            </div>
+
+            <button
+                type="button"
+                id="refresh-orders-button">
+                Refresh Orders
+            </button>
+
+        </div>
+
+        <p id="my-orders-message" role="status">
+            Log in to view your orders.
+        </p>
+
+        <div id="my-orders-list"></div>
+
+    </section>
+
+    <!-- Checkout Section -->
+    <section id="checkout-section" hidden>
+
+        <h2>Complete Your Order</h2>
+
+        <p>Please enter your delivery details below.</p>
+
+        <form id="checkout-form">
+
+            <div class="form-group">
+
+                <label for="customer-name">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="customer-name"
+                    name="customerName"
+                    placeholder="Enter your full name"
+                    maxlength="100"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="customer-phone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="customer-phone"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="delivery-address">
+                    Delivery Address
+                </label>
+
+                <textarea
+                    id="delivery-address"
+                    name="deliveryAddress"
+                    placeholder="Enter your complete delivery address"
+                    rows="4"
+                    maxlength="1000"
+                    required></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="payment-method">
+                    Payment Method
+                </label>
+
+                <select
+                    id="payment-method"
+                    name="paymentMethod"
+                    required>
+
+                    <option value="COD">
+                        Cash on Delivery
+                    </option>
+
+                </select>
+
+            </div>
+
+            <button
+                type="submit"
+                id="place-order-button">
+                Place Order
+            </button>
+
+            <button
+                type="button"
+                id="cancel-checkout">
+                Cancel
+            </button>
+
+            <p id="checkout-message" role="status"></p>
+
+        </form>
+
+    </section>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

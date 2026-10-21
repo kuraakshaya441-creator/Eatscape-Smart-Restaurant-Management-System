@@ -1,0 +1,1426 @@
+
+/* ========================================
+   EATSCAPE - GLOBAL STYLES
+======================================== */
+
+:root {
+    --primary: #e85d04;
+    --primary-dark: #c94b00;
+    --background: #fffaf5;
+    --white: #ffffff;
+    --text: #292522;
+    --muted: #716b65;
+    --border: #eadfd5;
+    --shadow: 0 5px 18px rgba(40, 25, 10, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+section {
+    padding: 65px 7%;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.25;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 32px;
+}
+
+button,
+.btn,
+.button {
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+    width: 100%;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: rgba(255, 250, 245, 0.96);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 18px rgba(40, 25, 10, 0.07);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+}
+
+.navbar .logo {
+    flex-shrink: 0;
+    color: var(--text);
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.navbar .logo span {
+    color: var(--primary);
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 26px;
+}
+
+.navbar nav a {
+    position: relative;
+    padding: 8px 0;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.navbar nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.25s ease;
+}
+
+.navbar nav a:hover,
+.navbar nav a:focus-visible {
+    color: var(--primary);
+}
+
+.navbar nav a:hover::after,
+.navbar nav a:focus-visible::after {
+    width: 100%;
+}
+
+.navbar .nav-button {
+    flex-shrink: 0;
+    display: inline-block;
+    padding: 11px 20px;
+    border-radius: 7px;
+    background: var(--text);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.navbar .nav-button:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(232, 93, 4, 0.2);
+}
+
+.navbar a:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+    border-radius: 3px;
+}
+
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.hero {
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 75px 7%;
+    background: #fff0df;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: clamp(34px, 5vw, 56px);
+    margin-bottom: 18px;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    color: var(--muted);
+    font-size: 17px;
+}
+
+.hero img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.btn,
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    background: var(--primary);
+    color: var(--white);
+    font-weight: 700;
+}
+
+.btn:hover,
+.button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   FEATURES SECTION
+======================================== */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.feature-card {
+    padding: 25px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: var(--muted);
+}
+
+
+/* ========================================
+   MENU SECTION
+======================================== */
+
+#menu {
+    background: var(--background);
+}
+
+#menu h2 {
+    margin-bottom: 25px;
+}
+
+/* Food category filters */
+
+.category-buttons,
+.menu-filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.category-buttons button,
+.menu-filters button,
+button[data-category] {
+    padding: 10px 20px;
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    background: var(--white);
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.category-buttons button:hover,
+.menu-filters button:hover,
+button[data-category]:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+}
+
+/* Active filter: add class="active"
+   or class="selected" through JavaScript */
+
+.category-buttons button.active,
+.category-buttons button.selected,
+.menu-filters button.active,
+.menu-filters button.selected,
+button[data-category].active,
+button[data-category].selected {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+}
+
+
+/* ========================================
+   FOOD GRID
+======================================== */
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    align-items: stretch;
+}
+
+
+/* ========================================
+   FOOD CARD
+======================================== */
+
+.food-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100%;
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(40, 25, 10, 0.14);
+}
+
+/* Food image */
+
+.food-card .food-image {
+    display: block;
+    width: 100%;
+    height: 220px;
+    min-height: 220px;
+    object-fit: cover;
+    object-position: center;
+    background: #fff0df;
+}
+
+/* Food information */
+
+.food-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    padding: 20px;
+    gap: 10px;
+}
+
+.food-category {
+    align-self: flex-start;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: #fff0df;
+    color: var(--primary-dark);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.food-info h3 {
+    font-size: 19px;
+    color: var(--text);
+    overflow-wrap: anywhere;
+}
+
+.food-info p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Food price and button row */
+
+.food-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.food-price {
+    color: var(--primary-dark);
+    font-size: 19px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* Add to cart button */
+
+.food-bottom .add-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 7px;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.food-bottom .add-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.food-bottom .add-button:focus-visible {
+    outline: 2px solid var(--primary-dark);
+    outline-offset: 3px;
+}
+
+
+/* ========================================
+   SHOPPING CART
+======================================== */
+
+.cart-summary {
+    margin-top: 40px;
+    padding: 25px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.cart-summary h3 {
+    margin-bottom: 15px;
+    font-size: 23px;
+}
+
+.cart-summary p {
+    margin-bottom: 10px;
+    color: var(--muted);
+}
+
+#cartItems {
+    margin: 15px 0;
+}
+
+#cartItems p {
+    margin-bottom: 10px;
+}
+
+#cartItems button {
+    margin-left: 8px;
+}
+
+.cart-summary button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    background: var(--primary);
+    color: var(--white);
+    font-weight: 700;
+}
+
+.cart-summary button:hover {
+    background: var(--primary-dark);
+}
+
+.cart-summary .checkout-button {
+    margin-top: 12px;
+}
+
+.cart-summary .remove-button {
+    background: #f3e7de;
+    color: var(--text);
+}
+
+.cart-summary .remove-button:hover {
+    background: #ead5c5;
+}
+
+
+/* ========================================
+   ABOUT SECTION
+======================================== */
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-content > p {
+    margin-bottom: 15px;
+    color: var(--muted);
+}
+
+.about-image img {
+    display: block;
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+
+/* ========================================
+   CONTACT SECTION
+======================================== */
+
+#contact {
+    background: #fff0df;
+}
+
+#contact p {
+    margin-bottom: 10px;
+    color: var(--muted);
+}
+
+#contact form {
+    max-width: 650px;
+    margin: 25px auto 0;
+}
+
+#contact input,
+#contact textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--white);
+    color: var(--text);
+    font: inherit;
+}
+
+#contact textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 1px;
+}
+
+#contact button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    background: var(--primary);
+    color: var(--white);
+    font-weight: 700;
+}
+
+#contact button:hover {
+    background: var(--primary-dark);
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    padding: 25px 7%;
+    background: var(--text);
+    color: var(--white);
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+
+/* ========================================
+   TABLET RESPONSIVENESS
+======================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 16px 5%;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .navbar .logo {
+        font-size: 26px;
+    }
+
+    .navbar nav {
+        gap: 18px;
+    }
+
+    .navbar .nav-button {
+        padding: 10px 15px;
+    }
+
+    section {
+        padding: 55px 5%;
+    }
+
+    .food-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .food-card .food-image {
+        height: 210px;
+        min-height: 210px;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* ========================================
+   MOBILE RESPONSIVENESS
+======================================== */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        justify-content: center;
+        padding: 14px 5%;
+        gap: 12px;
+    }
+
+    .navbar .logo {
+        width: 100%;
+        text-align: center;
+        font-size: 27px;
+    }
+
+    .navbar nav {
+        width: 100%;
+        gap: 10px 18px;
+    }
+
+    .navbar nav a {
+        font-size: 13px;
+    }
+
+    .navbar .nav-button {
+        margin-top: 2px;
+    }
+
+    section {
+        padding: 40px 5%;
+    }
+
+    h2 {
+        font-size: 27px;
+    }
+
+    .hero {
+        min-height: 350px;
+        padding: 50px 5%;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .food-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .food-card .food-image {
+        height: 230px;
+        min-height: 230px;
+    }
+
+    .food-info {
+        padding: 16px;
+    }
+
+    .food-bottom {
+        flex-wrap: wrap;
+    }
+
+    .category-buttons,
+    .menu-filters {
+        gap: 8px;
+    }
+
+    .category-buttons button,
+    .menu-filters button,
+    button[data-category] {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .cart-summary {
+        padding: 18px;
+        text-align: left;
+    }
+
+    .about-image img {
+        height: 260px;
+    }
+
+    .features {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    footer {
+        padding: 22px 5%;
+    }
+}
+
+
+/* ========================================
+   SMALL MOBILE SCREENS
+======================================== */
+
+@media (max-width: 380px) {
+
+    .food-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .food-bottom .add-button {
+        width: 100%;
+    }
+
+    .navbar nav {
+        gap: 8px 12px;
+    }
+
+    .navbar nav a {
+        font-size: 12px;
+    }
+}
+
+
+/* ========================================
+   LOGIN & REGISTER SECTION
+======================================== */
+
+#login-section {
+    padding: 70px 7%;
+    background: linear-gradient(
+        135deg,
+        #fff0df,
+        var(--background),
+        #fff7ef
+    );
+    scroll-margin-top: 90px;
+}
+
+#login-section h2 {
+    margin-bottom: 12px;
+    color: var(--text);
+    font-size: clamp(28px, 4vw, 36px);
+}
+
+#login-section > p {
+    margin-bottom: 25px;
+    color: var(--muted);
+    text-align: center;
+}
+
+/* Login and register form cards */
+
+#login-form,
+#register-form {
+    width: 100%;
+    max-width: 460px;
+    margin: 25px auto;
+    padding: 32px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(40, 25, 10, 0.09);
+    transition:
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+#login-form:hover,
+#register-form:hover {
+    box-shadow: 0 16px 40px rgba(40, 25, 10, 0.13);
+}
+
+/* Form headings */
+
+#login-form h3,
+#register-form h3 {
+    margin-bottom: 8px;
+    color: var(--text);
+    font-size: 25px;
+    text-align: center;
+}
+
+#login-form p,
+#register-form p {
+    margin-bottom: 20px;
+    color: var(--muted);
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Form labels */
+
+#login-form label,
+#register-form label {
+    display: block;
+    margin: 15px 0 7px;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Input fields */
+
+#login-email,
+#login-password,
+#register-name,
+#register-email,
+#register-password {
+    display: block;
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fffdfb;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+/* Input placeholder */
+
+#login-form input::placeholder,
+#register-form input::placeholder {
+    color: #a39a91;
+}
+
+/* Input focus effect */
+
+#login-email:focus,
+#login-password:focus,
+#register-name:focus,
+#register-email:focus,
+#register-password:focus {
+    border-color: var(--primary);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(232, 93, 4, 0.12);
+}
+
+/* Login and register buttons */
+
+#login-button,
+#register-button {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    padding: 13px 18px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary);
+    color: var(--white);
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#login-button:hover,
+#register-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(232, 93, 4, 0.2);
+}
+
+#login-button:active,
+#register-button:active {
+    transform: translateY(0);
+}
+
+#login-button:focus-visible,
+#register-button:focus-visible {
+    outline: 3px solid rgba(232, 93, 4, 0.35);
+    outline-offset: 3px;
+}
+
+/* Success and error messages */
+
+#login-message,
+#register-message {
+    min-height: 0;
+    margin-top: 14px;
+    padding: 0;
+    border-radius: 7px;
+    font-size: 14px;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+/* Style messages when JavaScript adds text */
+
+#login-message:not(:empty),
+#register-message:not(:empty) {
+    padding: 10px 12px;
+    background: #fff0df;
+    color: var(--primary-dark);
+}
+
+/* Links inside authentication forms */
+
+#login-form a,
+#register-form a {
+    color: var(--primary-dark);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+#login-form a:hover,
+#register-form a:hover {
+    text-decoration: underline;
+}
+
+/* Keyboard accessibility */
+
+#login-form input:focus-visible,
+#register-form input:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* ========================================
+   LOGIN & REGISTER RESPONSIVENESS
+======================================== */
+
+@media (max-width: 600px) {
+    #login-section {
+        padding: 45px 5%;
+    }
+
+    #login-form,
+    #register-form {
+        max-width: 100%;
+        margin: 20px auto;
+        padding: 24px 20px;
+        border-radius: 12px;
+    }
+
+    #login-form h3,
+    #register-form h3 {
+        font-size: 23px;
+    }
+
+    #login-email,
+    #login-password,
+    #register-name,
+    #register-email,
+    #register-password {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 380px) {
+    #login-form,
+    #register-form {
+        padding: 20px 16px;
+    }
+
+    #login-button,
+    #register-button {
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+
+/* ========================================
+   EATSCAPE - MY ORDERS SECTION
+======================================== */
+
+.my-orders-section {
+    padding: 70px 7%;
+    background: linear-gradient(
+        135deg,
+        #fff7ef,
+        #fff0df
+    );
+    scroll-margin-top: 90px;
+    min-height: 300px;
+}
+
+/* Heading and refresh button */
+
+.my-orders-section .section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto 25px;
+}
+
+.my-orders-section .eyebrow {
+    margin-bottom: 10px;
+    color: var(--primary-dark);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.my-orders-section h2 {
+    margin: 0;
+    color: var(--text);
+    font-size: clamp(30px, 4vw, 40px);
+    text-align: left;
+}
+
+.my-orders-section h2 span {
+    color: var(--primary);
+}
+
+/* Refresh Orders button */
+
+#refresh-orders-button {
+    flex-shrink: 0;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(232, 93, 4, 0.15);
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#refresh-orders-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(232, 93, 4, 0.22);
+}
+
+#refresh-orders-button:focus-visible {
+    outline: 3px solid rgba(232, 93, 4, 0.35);
+    outline-offset: 3px;
+}
+
+/* Login message and order status message */
+
+#my-orders-message {
+    max-width: 1100px;
+    margin: 0 auto 24px;
+    padding: 16px 20px;
+    border: 1px solid #f0d8c5;
+    border-radius: 10px;
+    background: var(--white);
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Orders list container */
+
+#my-orders-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+/* Individual order cards */
+
+#my-orders-list .order-card {
+    min-width: 0;
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+#my-orders-list .order-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(40, 25, 10, 0.12);
+}
+
+#my-orders-list .order-card h3 {
+    margin-bottom: 14px;
+    color: var(--text);
+    font-size: 20px;
+    overflow-wrap: anywhere;
+}
+
+#my-orders-list .order-card p {
+    margin-bottom: 10px;
+    color: var(--muted);
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+#my-orders-list .order-card strong {
+    color: var(--text);
+}
+
+/* Food items inside each order */
+
+#my-orders-list .order-card ul {
+    margin: 16px 0;
+    padding: 14px 18px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: #fffaf5;
+    list-style: none;
+}
+
+#my-orders-list .order-card li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+#my-orders-list .order-card li:last-child {
+    border-bottom: none;
+}
+
+/* Order status badges, if generated by JavaScript */
+
+#my-orders-list .order-status {
+    display: inline-block;
+    margin: 5px 0 12px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #fff0df;
+    color: var(--primary-dark);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* Order totals */
+
+#my-orders-list .order-total {
+    margin-top: 15px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    color: var(--primary-dark);
+    font-size: 19px;
+    font-weight: 800;
+    text-align: right;
+}
+
+/* Buttons inside order cards, if present */
+
+#my-orders-list .order-card button {
+    margin: 8px 8px 0 0;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 7px;
+    background: var(--primary);
+    color: var(--white);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#my-orders-list .order-card button:hover {
+    background: var(--primary-dark);
+}
+
+/* ========================================
+   MY ORDERS - RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 900px) {
+    .my-orders-section {
+        padding: 55px 5%;
+    }
+
+    #my-orders-list {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .my-orders-section {
+        padding: 42px 5%;
+    }
+
+    .my-orders-section .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .my-orders-section h2 {
+        font-size: 30px;
+    }
+
+    #refresh-orders-button {
+        width: 100%;
+    }
+
+    #my-orders-message {
+        padding: 14px;
+        font-size: 14px;
+    }
+
+    #my-orders-list .order-card {
+        padding: 18px;
+    }
+
+    #my-orders-list .order-card h3 {
+        font-size: 18px;
+    }
+
+    #my-orders-list .order-card button {
+        width: 100%;
+        margin: 8px 0 0;
+    }
+}
+
+/* ===== Eatscape food card redesign ===== */
+
+#food-list,
+#recommendation-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+.food-card {
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid #f0e4da;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(65, 36, 18, 0.07);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(65, 36, 18, 0.13);
+}
+
+.food-card .food-image {
+    display: block;
+    width: 100%;
+    height: 205px;
+    min-height: 205px;
+    object-fit: cover;
+    background: #fff4e8;
+}
+
+.food-card-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 10px;
+    padding: 18px;
+}
+
+.food-card-content h3 {
+    margin: 0;
+    color: #302116;
+    font-size: 1.12rem;
+    line-height: 1.4;
+}
+
+.food-card-content p {
+    margin: 0;
+    color: #75685f;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.food-card-content .food-category {
+    align-self: flex-start;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #fff1e5;
+    color: #bd4b08;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.food-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 14px;
+}
+
+.food-card-footer strong {
+    color: #d94f00;
+    font-size: 1.15rem;
+    white-space: nowrap;
+}
+
+.food-card-footer button {
+    border: none;
+    border-radius: 9px;
+    padding: 11px 15px;
+    background: #e85d04;
+    color: #ffffff;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.food-card-footer button:hover:not(:disabled) {
+    background: #c94b00;
+    transform: translateY(-1px);
+}
+
+.food-card-footer button:disabled {
+    background: #d7d0ca;
+    color: #665e58;
+    cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+    #food-list,
+    #recommendation-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .food-card .food-image {
+        height: 145px;
+        min-height: 145px;
+    }
+
+    .food-card-content {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .food-card-content h3 {
+        font-size: 0.98rem;
+    }
+
+    .food-card-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .food-card-footer button {
+        width: 100%;
+        padding: 10px 8px;
+    }
+}
+
+@media (max-width: 360px) {
+    #food-list,
+    #recommendation-list {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

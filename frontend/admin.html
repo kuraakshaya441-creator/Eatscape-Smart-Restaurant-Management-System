@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eatscape | Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <header class="admin-header">
+        <div>
+            <h1>Eatscape</h1>
+            <p>Restaurant Admin Dashboard</p>
+        </div>
+
+        <a href="index.html" class="back-link">View Website</a>
+    </header>
+
+    <main class="admin-container">
+
+        <section class="welcome-section">
+            <h2>Order Management</h2>
+            <p>View and manage customer orders.</p>
+        </section>
+
+        <section class="summary-cards">
+            <div class="summary-card">
+                <p>Total Orders</p>
+                <h3 id="total-orders">0</h3>
+            </div>
+
+            <div class="summary-card">
+                <p>Orders Placed</p>
+                <h3 id="placed-orders">0</h3>
+            </div>
+
+            <div class="summary-card">
+                <p>Delivered Orders</p>
+                <h3 id="delivered-orders">0</h3>
+            </div>
+
+            <div class="summary-card">
+                <p>Total Order Value</p>
+                <h3 id="total-revenue">₹0.00</h3>
+            </div>
+        </section>
+
+        <section class="orders-section">
+            <div class="orders-heading">
+                <h2>Customer Orders</h2>
+                <button id="refresh-orders" type="button">
+                    Refresh Orders
+                </button>
+            </div>
+
+            <p id="orders-message" role="status">
+                Loading orders...
+            </p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Phone</th>
+                            <th>Delivery Address</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Payment</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="orders-table-body">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>
