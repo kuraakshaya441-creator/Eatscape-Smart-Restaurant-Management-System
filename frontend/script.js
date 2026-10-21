@@ -1,5 +1,4 @@
-
-const API_URL = "http://localhost:8080/api/foods";
+const API_URL = "https://eatscape-backend.onrender.com/api/foods";
 const ORDERS_URL = "http://localhost:8080/api/orders";
 const USERS_URL = "http://localhost:8080/api/users";
 const RECOMMENDATIONS_URL = "http://localhost:8080/api/recommendations";
